@@ -8,10 +8,10 @@ const data = [
   { name: 'Pause', value: 45, color: '#00ff00' },
   { name: 'In Call', value: 25, color: '#0000ff' },
 ];
-const cx = 150;
-const cy = 200;
+const cx = 92;
+const cy = 100;
 const iR = 50;
-const oR = 100;
+const oR = 90;
 const value = 50; // Example value, adjust as needed
 
 const renderNeedle = (value, data, cx, cy, iR, oR, color) => {
@@ -70,21 +70,7 @@ export default function CallRatio() {
         ))}
       </Pie>
       {renderNeedle(value, data, cx, cy, iR, oR, '#d0d000')}
-      <circle key="red-circle" cx={cx - 100} cy={cy + 120} r={10} fill="#ff0000" />
-      <circle key="green-circle" cx={cx} cy={cy + 120} r={10} fill="#00ff00" />
-      <circle key="blue-circle" cx={cx + 100} cy={cy + 120} r={10} fill="#0000ff" />
-      {data.map(({ name, color }, index) => (
-        <Text
-          key={`label-${index}`}
-          x={cx - 100 + (index * 100)} // Adjust position according to circle's x position
-          y={cy + 140} // Adjust position below the circles
-          fill={color}
-          textAnchor="middle"
-          fontSize={12}
-        >
-          {name}
-        </Text>
-      ))}
+      
     </PieChart>
   );
 }
