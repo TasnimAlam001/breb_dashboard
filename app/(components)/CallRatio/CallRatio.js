@@ -1,4 +1,5 @@
 "use client"
+import { Box, Typography } from '@mui/material';
 import React, { useEffect, useState } from 'react';
 import { PieChart, Pie, Cell, Text } from 'recharts';
 
@@ -51,11 +52,13 @@ export default function CallRatio() {
   }
 
   return (
-    <PieChart width={400} height={400}>
+    <Box>
+      <Typography align='left'>Call Answer Ratio</Typography>
+      <PieChart width={300} height={180}>
       <Pie
         dataKey="value"
-        startAngle={180}
-        endAngle={0}
+        startAngle={215}
+        endAngle={-35}
         data={data}
         cx={cx}
         cy={cy}
@@ -72,5 +75,8 @@ export default function CallRatio() {
       {renderNeedle(value, data, cx, cy, iR, oR, '#d0d000')}
       
     </PieChart>
+    <Typography>98.87%</Typography>
+
+    </Box>
   );
 }

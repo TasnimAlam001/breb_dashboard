@@ -2,6 +2,7 @@ import { Box, Grid } from '@mui/material';
 import React from 'react';
 import CallDetails from '../CallDetails/CallDetails';
 import CallRatio from '../CallRatio/CallRatio';
+import TicketPie from '../TicketPie/TicketPie';
 
 export default function DashboardContent() {
   return (
@@ -11,7 +12,13 @@ export default function DashboardContent() {
           <CallDetails />
         </Grid>
         <Grid item xs={2}>
-          <Box sx={{ border: '1px solid #ccc', padding: 2, textAlign: 'center' }}><CallRatio/></Box>
+          <Box sx={{ border: '1px solid #ccc', padding: 2, textAlign: 'center' }}><CallRatio/>
+          
+          </Box>
+          <Box sx={{mb:2}}>
+          <TicketPie/>
+          </Box>
+          <TicketPie/>
         </Grid>
         <Grid item xs={5}>
           <Box sx={{ border: '1px solid #ccc', padding: 2, textAlign: 'center' }}>Hello</Box>
