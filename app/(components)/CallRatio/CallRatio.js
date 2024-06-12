@@ -1,7 +1,7 @@
 "use client"
-import { Box, Typography } from '@mui/material';
+import { Box, Typography, Stack } from '@mui/material';
 import React, { useEffect, useState } from 'react';
-import { PieChart, Pie, Cell, Text } from 'recharts';
+import { PieChart, Pie, Cell } from 'recharts';
 
 const RADIAN = Math.PI / 180;
 const data = [
@@ -52,31 +52,48 @@ export default function CallRatio() {
   }
 
   return (
-    <Box>
-      <Typography align='left'>Call Answer Ratio</Typography>
-      <PieChart width={300} height={180}>
-      <Pie
-        dataKey="value"
-        startAngle={215}
-        endAngle={-35}
-        data={data}
-        cx={cx}
-        cy={cy}
-        innerRadius={iR}
-        outerRadius={oR}
-        fill="#8884d8"
-        stroke="none"
-        labelLine={false}
-      >
-        {data.map((entry, index) => (
-          <Cell key={`cell-${index}`} fill={entry.color} />
+    <Box sx={{ boxShadow: "0px 10px 40px 0px #00000008", borderRadius: 3, bgcolor: "white", p: 2 }}>
+      <Typography align='left' sx={{ mb: 2 }}>Call Answer Ratio</Typography>
+      <Box sx={{ display: 'flex', justifyContent: 'center' , alignItems:"center"}}>
+        <PieChart width={200} height={180}>
+          <Pie
+            dataKey="value"
+            startAngle={215}
+            endAngle={-35}
+            data={data}
+            cx={cx}
+            cy={cy}
+            innerRadius={iR}
+            outerRadius={oR}
+            fill="#8884d8"
+            stroke="none"
+            labelLine={false}
+          >
+            {data.map((entry, index) => (
+              <Cell key={`cell-${index}`} fill={entry.color} />
+            ))}
+          </Pie>
+          {renderNeedle(value, data, cx, cy, iR, oR, '#d0d000')}
+        </PieChart>
+      </Box>
+      <Typography align='center'>98.87%</Typography>
+      <Stack direction="row" spacing={1} alignItems="center" justifyContent="center" sx={{ mt: 2 }}>
+        {data.map((entry) => (
+          <Stack key={entry.name} direction="row" spacing={1} alignItems="center">
+            <Box
+              sx={{
+                width: 10,
+                height: 10,
+                borderRadius: "50%",
+                backgroundColor: entry.color,
+              }}
+            />
+            <Typography sx={{ fontSize: 15 }}>
+              {entry.name}
+            </Typography>
+          </Stack>
         ))}
-      </Pie>
-      {renderNeedle(value, data, cx, cy, iR, oR, '#d0d000')}
-      
-    </PieChart>
-    <Typography>98.87%</Typography>
-
+      </Stack>
     </Box>
   );
 }

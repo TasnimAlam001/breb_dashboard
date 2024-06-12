@@ -73,11 +73,7 @@
   }
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
+
 
 html,
 body {
@@ -105,3 +101,8 @@ a {
     color-scheme: dark;
   }
 } */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}

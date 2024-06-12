@@ -5,7 +5,7 @@ import { Box } from "@mui/material";
 
 export default function Dashboard() {
   return (
-    <Box sx={{mx:4}}>
+    <Box sx={{mx:4, pt:2}}>
         <Appbar/>
         <DashboardContent/>
         

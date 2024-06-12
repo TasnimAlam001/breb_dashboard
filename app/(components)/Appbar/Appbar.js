@@ -30,7 +30,7 @@ function Appbar() {
   };
 
   return (
-    <AppBar sx={{borderRadius: '8px'}} position="static" color='inherit'>
+    <AppBar sx={{ boxShadow: "0px 10px 40px 0px #00000008", borderRadius: 3 }} position="static" color='inherit'>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

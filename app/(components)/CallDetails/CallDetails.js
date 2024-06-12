@@ -9,8 +9,10 @@ function CallBox({ icon, title, value }) {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        border: "1px solid #ccc",
-        borderRadius: 1,
+        // border: "1px solid #ccc",
+        // borderRadius: 1,
+        boxShadow: "0px 10px 40px 0px #00000008", borderRadius: 3 , bgcolor:"white",
+
         mt:2,
         height: "100%",
       }}
@@ -37,8 +39,8 @@ export default function CallDetails() {
       <Box
         sx={{
           width: "100%",
-          border: "1px solid #ccc",
-          borderRadius: 1,
+          boxShadow: "0px 10px 40px 0px #00000008", borderRadius: 3 , bgcolor:"white"
+
         }}
       >
         <Grid container alignItems="center" sx={{ p: 1 }}>

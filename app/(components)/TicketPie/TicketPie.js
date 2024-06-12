@@ -52,8 +52,8 @@ export default function TicketPie({ companyData = dummyCompanyData }) {
   };
 
   const width = 190;
-  const height = 240;
-  const boxHeight = 270;
+  const height = 140;
+  const boxHeight = 210;
 
   return (
     <div>
@@ -74,8 +74,9 @@ export default function TicketPie({ companyData = dummyCompanyData }) {
                 ) : (
                   <PieChart
                     margin={{
-                      top: 40,
+                      top: 0,
                       left: 40,
+                      bottom:10
                     }}
                     series={[
                       {
@@ -99,7 +100,7 @@ export default function TicketPie({ companyData = dummyCompanyData }) {
                   />
                 )}
               </Grid>
-              <Grid item xs={6} sx={{ display: "flex", justifyContent: "center", flexDirection: "column", marginTop: 3 }}>
+              <Grid item xs={5} sx={{ display: "flex", justifyContent: "center", flexDirection: "column", marginTop: 3 }}>
                 {data.map((name) => (
                   <Stack
                     key={name.label}
